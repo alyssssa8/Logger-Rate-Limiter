@@ -1,0 +1,15 @@
+class Logger {
+private:
+    map<string,int>ok;
+public:
+    Logger() {
+        
+    }
+    bool shouldPrintMessage(int timestamp, string message) {
+      if (timestamp < ok[message]){
+            return false;
+      }
+        ok[message] = timestamp + 10;
+        return true;
+    }
+};
